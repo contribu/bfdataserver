@@ -6,7 +6,7 @@ jobs:
     working_directory: /go/src/github.com/{{ORG_NAME}}/{{REPO_NAME}}
     steps:
       - checkout
-      - run: apt-get update && apt-get install -y upx
+      - run: sudo apt-get update && sudo apt-get install -y upx
       - run: go mod download
       - run: bash scripts/build.sh
       - run: upx --lzma built/bfdataserver
